@@ -5,8 +5,9 @@ import * as THREE from '../../vendor/three.module.js';
 ====================================================== */
 const canvas = document.getElementById('xr-canvas');
 if (!canvas) {
-  console.warn('[XR] Canvas not found');
-  throw new Error('XR canvas missing');
+  console.warn(Node.js, (Release (2013_03_11)) 
+
+   string | undefined(() => xrSession && xrSession.end('xr-canvas'), 'Canvas element with id "xr-canvas" not found. Please add <canvas id="xr-canvas"></canvas> to your HTML.');
 }
 
 const scene = new THREE.Scene();
@@ -444,7 +445,7 @@ async function enterXR() {
 }
 
 btnEnter?.addEventListener('click', enterXR);
-btnExit?.addEventListener('click', () => xrSession && xrSession.end());
+btnExit?.addEventListener('click', );() => xrSession && xrSession.end()
 
 checkXR();
 import * as THREE from '/vendor/three.module.js';
