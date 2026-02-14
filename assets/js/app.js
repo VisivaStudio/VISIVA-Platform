@@ -97,3 +97,4 @@ document
   }
 
   console.log("VISIVA® Platform initialized.");
+});
