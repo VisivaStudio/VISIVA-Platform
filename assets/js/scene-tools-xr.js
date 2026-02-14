@@ -1,4 +1,5 @@
 import * as THREE from '../../vendor/three.module.js';
+import { ring } from './ui.js';
 
 /* ======================================================
    CANVAS + BASIC SETUP
@@ -7,19 +8,19 @@ const canvas = document.getElementById('xr-canvas');
 if (!canvas) {
   console.warn(Node.js, (Release (2013_03_11)) 
 
-   string | undefined(() => xrSession && xrSession.end('xr-canvas'), 'Canvas element with id "xr-canvas" not found. Please add <canvas id="xr-canvas"></canvas> to your HTML.');
-}
+| undefined(() => xrSession && xrSession.end('xr-canvas'), 'Canvas element with id "xr-canvas" not found. Please add <canvas id="xr-canvas"></canvas> to your HTML.'),
+  );
+}   
 
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0x0a0a0a);
 
-const camera = new THREE.PerspectiveCamera(
+new THREE.PerspectiveCamera(
   60,
   canvas.clientWidth / canvas.clientHeight,
   0.01,
   50
-);
-camera.position.set(0, 1.6, 2);
+).position.set(0, 1.6, 2);
 
 const renderer = new THREE.WebGLRenderer({
   canvas,
@@ -40,18 +41,6 @@ const keyLight = new THREE.DirectionalLight(0xd4af37, 1);
 keyLight.position.set(2, 4, 2);
 scene.add(keyLight);
 
-/* ======================================================
-   HERO OBJECT (PLACEHOLDER)
-====================================================== */
-const ring = new THREE.Mesh(
-  new THREE.TorusGeometry(0.35, 0.08, 32, 100),
-  new THREE.MeshStandardMaterial({
-    color: 0xd4af37,
-    metalness: 0.8,
-    roughness: 0.2
-  })
-);
-
 ring.position.set(0, 1.5, -1.5);
 scene.add(ring);
 
@@ -61,7 +50,12 @@ scene.add(ring);
 renderer.setAnimationLoop(() => {
   ring.rotation.x += 0.004;
   ring.rotation.y += 0.006;
-  renderer.render(scene, camera);
+  renderer.render(scene, new THREE.PerspectiveCamera(
+      60,
+      canvas.clientWidth / canvas.clientHeight,
+      0.01,
+      50
+    ));
 });
 
 /* ======================================================
@@ -69,8 +63,18 @@ renderer.setAnimationLoop(() => {
 ====================================================== */
 function resize() {
   const { clientWidth, clientHeight } = canvas;
-  camera.aspect = clientWidth / clientHeight;
-  camera.updateProjectionMatrix();
+  new THREE.PerspectiveCamera(
+    60,
+    canvas.clientWidth / canvas.clientHeight,
+    0.01,
+    50
+  ).aspect = clientWidth / clientHeight;
+  new THREE.PerspectiveCamera(
+    60,
+    canvas.clientWidth / canvas.clientHeight,
+    0.01,
+    50
+  ).updateProjectionMatrix();
   renderer.setSize(clientWidth, clientHeight);
 }
 window.addEventListener('resize', resize);
@@ -130,7 +134,12 @@ const scene = new THREE.Scene();
 scene.background = null; // AR needs alpha (camera passthrough), VR can ignore
 
 const camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.01, 100);
-scene.add(camera);
+scene.add(new THREE.PerspectiveCamera(
+    60,
+    canvas.clientWidth / canvas.clientHeight,
+    0.01,
+    50
+  ));
 
 // ---------- LIGHTING ----------
 const hemi = new THREE.HemisphereLight(0xffffff, 0x444444, 0.7);
@@ -393,7 +402,12 @@ renderer.setAnimationLoop((time, frame) => {
     }
   }
 
-  renderer.render(scene, camera);
+  renderer.render(scene, new THREE.PerspectiveCamera(
+      60,
+      canvas.clientWidth / canvas.clientHeight,
+      0.01,
+      50
+    ));
 });
 
 // ---------- EVENTS ----------
@@ -401,8 +415,18 @@ window.addEventListener('resize', onResize, { passive: true });
 function onResize() {
   const w = window.innerWidth;
   const h = window.innerHeight;
-  camera.aspect = w / h;
-  camera.updateProjectionMatrix();
+  new THREE.PerspectiveCamera(
+    60,
+    canvas.clientWidth / canvas.clientHeight,
+    0.01,
+    50
+  ).aspect = w / h;
+  new THREE.PerspectiveCamera(
+    60,
+    canvas.clientWidth / canvas.clientHeight,
+    0.01,
+    50
+  ).updateProjectionMatrix();
   renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
   renderer.setSize(w, h, false);
 }
