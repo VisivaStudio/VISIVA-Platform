@@ -1,0 +1,41 @@
+0 verbose cli /opt/homebrew/Cellar/node/25.6.0/bin/node /opt/homebrew/lib/node_modules/npm/bin/npm-cli.js
+1 info using npm@11.8.0
+2 info using node@v25.6.0
+3 silly config load:file:/opt/homebrew/lib/node_modules/npm/npmrc
+4 silly config load:file:/Users/lettingexpress/.npmrc
+5 silly config load:file:/opt/homebrew/etc/npmrc
+6 verbose title npm exec create-next-app@latest visiva-app --typescript --tailwind --eslint --app --src-dir --import-alias @/* --use-npm --no-git
+7 verbose argv "exec" "--yes" "--" "create-next-app@latest" "visiva-app" "--typescript" "--tailwind" "--eslint" "--app" "--src-dir" "--import-alias" "@/*" "--use-npm" "--no-git"
+8 verbose logfile logs-max:10 dir:/Users/lettingexpress/Documents/GitHub/VISIVA-Platform/.npm-cache/_logs/2026-02-18T15_28_19_845Z-
+9 verbose logfile /Users/lettingexpress/Documents/GitHub/VISIVA-Platform/.npm-cache/_logs/2026-02-18T15_28_19_845Z-debug-0.log
+10 silly logfile done cleaning log files
+11 silly packumentCache heap:2348810240 maxSize:587202560 maxEntrySize:293601280
+12 verbose shrinkwrap failed to load node_modules/.package-lock.json out of date, updated: node_modules
+13 http fetch GET 200 https://registry.npmjs.org/npm 138ms
+14 http fetch GET 200 https://registry.npmjs.org/create-next-app 454ms (cache miss)
+15 silly packumentCache heap:2348810240 maxSize:587202560 maxEntrySize:293601280
+16 silly packumentCache heap:2348810240 maxSize:587202560 maxEntrySize:293601280
+17 silly idealTree buildDeps
+18 silly fetch manifest create-next-app@16.1.6
+19 silly packumentCache full:https://registry.npmjs.org/create-next-app cache-miss
+20 http fetch GET 200 https://registry.npmjs.org/create-next-app 654ms (cache miss)
+21 silly packumentCache full:https://registry.npmjs.org/create-next-app set size:undefined disposed:false
+22 silly placeDep ROOT create-next-app@16.1.6 OK for:  want: 16.1.6
+23 silly reify moves {}
+24 silly audit bulk request { 'create-next-app': [ '16.1.6' ] }
+25 http cache create-next-app@https://registry.npmjs.org/create-next-app/-/create-next-app-16.1.6.tgz 0ms (cache hit)
+26 silly tarball no local data for create-next-app@https://registry.npmjs.org/create-next-app/-/create-next-app-16.1.6.tgz. Extracting by manifest.
+27 http fetch GET 200 https://registry.npmjs.org/create-next-app/-/create-next-app-16.1.6.tgz 142ms (cache miss)
+28 http fetch POST 200 https://registry.npmjs.org/-/npm/v1/security/advisories/bulk 351ms
+29 silly audit report {}
+30 verbose cwd /Users/lettingexpress/Documents/GitHub/VISIVA-Platform
+31 verbose os Darwin 25.4.0
+32 verbose node v25.6.0
+33 verbose npm  v11.8.0
+34 notice
+34 notice New minor version of npm available! 11.8.0 -> 11.10.0
+34 notice Changelog: https://github.com/npm/cli/releases/tag/v11.10.0
+34 notice To update run: npm install -g npm@11.10.0
+34 notice  { force: true, Symbol(proc-log.meta): true }
+35 verbose exit 0
+36 info ok
