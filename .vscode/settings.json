@@ -2,5 +2,17 @@
     "go.toolsEnvVars": {
         "GOTOOLCHAIN": "on"
     },
-    "compile-hero.disable-compile-files-on-did-save-code": false
+    "compile-hero.disable-compile-files-on-did-save-code": false,
+    "git.ignoreLimitWarning": true,
+    "jdk.runConfig.cwd": "/users/lettingexpress",
+    "java.format.settings.url": ".vscode/java-formatter.xml",
+    "python.testing.unittestArgs": [
+        "-v",
+        "-s",
+        ".",
+        "-p",
+        "*test.py"
+    ],
+    "python.testing.pytestEnabled": false,
+    "python.testing.unittestEnabled": true
 }
