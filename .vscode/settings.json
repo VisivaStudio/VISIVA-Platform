@@ -1,5 +1,6 @@
 {
     "go.toolsEnvVars": {
         "GOTOOLCHAIN": "on"
-    }
+    },
+    "compile-hero.disable-compile-files-on-did-save-code": false
 }
