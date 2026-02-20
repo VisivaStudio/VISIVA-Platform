@@ -1,16 +1,21 @@
+import { SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
 import Image from 'next/image';
-import Link from 'next/link';
 
 export function Header() {
     return (
-        <header className="visiva-header flex flex-col items-center">
-            {/* 
-         Using a placeholder for logo if missing, or assuming it exists.
-         Based on HTML: assets/images/visiva/logo.png
-         In public: /assets/images/visiva/logo.png
-      */}
+        <header className="visiva-header flex flex-col items-center relative">
+            <div className="absolute top-4 right-6">
+                <SignedOut>
+                    <SignInButton mode="modal">
+                        <button className="cta-button text-sm px-4 py-2">Sign In</button>
+                    </SignInButton>
+                </SignedOut>
+                <SignedIn>
+                    <UserButton />
+                </SignedIn>
+            </div>
+
             <div className="mb-4 relative w-[72px] h-[72px]">
-                {/* We use a fallback or standard image if file check fails, but assuming it was copied */}
                 <Image
                     src="/assets/img/logo.png"
                     alt="VISIVA Logo"

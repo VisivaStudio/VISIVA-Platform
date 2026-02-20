@@ -26,8 +26,6 @@
         </repository>
     </repositories>
 
-
-
     <dependencies>
         <dependency>
             <groupId>org.ow2.petals.samples.sql</groupId>
